@@ -1,16 +1,16 @@
 //your code here
 
-let bandNames = ["The Beatles", "Led Zeppelin", "The Rolling Stones", "Pink Floyd", "The Who", "Radiohead", "Aerosmith", "The Beach Boys", "The Doors", "Queen"];
+const bands = ["The Rolling Stones", "Pink Floyd", "The Beatles", "Led Zeppelin", "Nirvana"];
 
-// Remove articles 'a', 'an', 'the' from band names
-let cleanBandNames = bandNames.map(name => name.replace(/^(a|an|the)\s+/i, ''));
+function stripArticle(name) {
+  return name.replace(/^(a |an |the )/i, "").trim();
+}
 
-// Sort the clean band names in lexicographic order
-cleanBandNames.sort();
+const sortedBands = bands.sort((a, b) => stripArticle(a) > stripArticle(b) ? 1 : -1);
 
-// Create a list of li tags for each band name
-let listItems = cleanBandNames.map(name => `<li>${name}</li>`);
-
-// Add the list items to the ul tag with id='band'
-let ulTag = document.getElementById('band');
-ulTag.innerHTML = listItems.join('');
+const ul = document.querySelector("#bands");
+sortedBands.forEach(band => {
+  const li = document.createElement("li");
+  li.textContent = band;
+  ul.appendChild(li);
+});
