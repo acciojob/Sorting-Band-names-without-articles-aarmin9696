@@ -1,5 +1,4 @@
 //your code here
-
 const bands = ["The Rolling Stones", "Pink Floyd", "The Beatles", "Led Zeppelin", "Nirvana"];
 
 function stripArticle(name) {
@@ -14,3 +13,6 @@ sortedBands.forEach(band => {
   li.textContent = band;
   ul.appendChild(li);
 });
+
+// Return the sorted band names without articles
+sortedBands;
