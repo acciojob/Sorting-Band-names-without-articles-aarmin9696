@@ -1,4 +1,3 @@
-//your code here
 const bands = ["The Rolling Stones", "Pink Floyd", "The Beatles", "Led Zeppelin", "Nirvana"];
 
 function stripArticle(name) {
