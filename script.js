@@ -6,5 +6,11 @@ function stripArticle(name) {
 
 const sortedBands = bands.sort((a, b) => stripArticle(a) > stripArticle(b) ? 1 : -1);
 
-// Return the sorted band names without articles
-sortedBands;
+// Render the sorted band names without articles
+const ul = document.querySelector("ul");
+sortedBands.forEach(band => {
+  const li = document.createElement("li");
+  li.textContent = band;
+  ul.appendChild(li);
+});
+
